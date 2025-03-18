@@ -36,6 +36,11 @@ namespace EjemploAmazon.views
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mySqlCommand1 = new MySqlConnector.MySqlCommand();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,19 +91,63 @@ namespace EjemploAmazon.views
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(389, 94);
             this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Name product";
+            this.textBox3.Text = "Describe Product";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(67, 348);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(389, 37);
+            this.textBox4.TabIndex = 5;
+            this.textBox4.Text = "Amount";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(564, 114);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(178, 204);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(598, 348);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 53);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Search Image";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(164, 408);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(181, 52);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Insert Product";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // UI_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 502);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "UI_Products";
-            this.Text = "UI_Products";
+            this.Text = " ";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,5 +161,9 @@ namespace EjemploAmazon.views
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private MySqlConnector.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

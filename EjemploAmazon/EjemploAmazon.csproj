@@ -116,6 +116,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Category.cs" />
+    <Compile Include="models\ConnectDB.cs" />
     <Compile Include="models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
