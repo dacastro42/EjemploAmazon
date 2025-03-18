@@ -46,14 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controllers\ControllerCategory.cs" />
+    <Compile Include="controllers\ControllerProduct.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\Category.cs" />
+    <Compile Include="models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\UI_Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\UI_Categories.Designer.cs">
+      <DependentUpon>UI_Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\UI_Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\UI_Products.Designer.cs">
+      <DependentUpon>UI_Products.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +79,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\UI_Categories.resx">
+      <DependentUpon>UI_Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\UI_Products.resx">
+      <DependentUpon>UI_Products.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,5 +98,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
