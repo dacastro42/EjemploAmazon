@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace EjemploAmazon.models
 {
@@ -15,6 +16,9 @@ namespace EjemploAmazon.models
         private int cantidadP;
         private string imagenProducto;
         private string fechaRegistro;
+
+        //Variables BD
+        ConnectDB objConection = new ConnectDB();
 
         public Product()
         {
@@ -31,6 +35,8 @@ namespace EjemploAmazon.models
             this.fechaRegistro = fechaRegistro;
         }
 
+       
+
         public Product(string nombreProducto, double precio, string descripcion, int cantidadP)
         {
             this.nombreProducto = nombreProducto;
@@ -46,5 +52,45 @@ namespace EjemploAmazon.models
         public int CantidadP { get => cantidadP; set => cantidadP = value; }
         public string ImagenProducto { get => imagenProducto; set => imagenProducto = value; }
         public string FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+
+        //Métodos de BD
+        internal int SelectLastProductByID(string sql)
+        {
+            //List<Category> listCategory = new List<Category>();
+            int idP = 0;
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, objConection.DataSource());
+                objConection.ConnectOpened();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        idP = reader.GetInt32(0);
+                        Console.WriteLine("El último ID "+idP);
+                        //string nombreCategoriac = reader.GetString(1);
+                        //string descripcionc = reader.GetString(2);
+
+                        //Category objc = new Category(idCategoriac, nombreCategoriac, descripcionc);
+
+                        //listCategory.Add(objc);
+                    }
+                }
+            }
+            catch (Exception w)
+            {
+                Console.WriteLine("ERROOOOOOR " + w.Message);
+                objConection.ConnectClosed();
+            }
+            finally
+            {
+                objConection.ConnectClosed();
+            }
+
+
+            return idP;
+        }
     }
 }

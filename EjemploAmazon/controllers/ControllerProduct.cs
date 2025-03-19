@@ -19,5 +19,15 @@ namespace EjemploAmazon.controllers
             result = objDB.ExecuteQuery(sql);
             return result;
         }
+
+        internal int SelectLastProductByID()
+        {
+            string sql = "SELECT * FROM productos ORDER BY fechaRegistro DESC LIMIT 1; ";
+            Product objP = new Product();
+            int idP = objP.SelectLastProductByID(sql);
+
+            return idP;
+            //throw new NotImplementedException();
+        }
     }
 }

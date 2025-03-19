@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controllers\ControllerCategory.cs" />
+    <Compile Include="controllers\ControllerCategoryProduct.cs" />
     <Compile Include="controllers\ControllerProduct.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

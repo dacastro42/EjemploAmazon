@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using EjemploAmazon.models;
 using EjemploAmazon.controllers;
 
+
 namespace EjemploAmazon.views
 {
     public partial class UI_Products : Form
     {
+        List<Category> listC = null;
         public UI_Products()
         {
             InitializeComponent();
@@ -39,13 +41,47 @@ namespace EjemploAmazon.views
 
             bool result = objCP.insertProduct(objp);
 
-            if (result)
+            int idPInsert = objCP.SelectLastProductByID();
+
+            string selected = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
+
+            int idcategory = 0;
+            for (int i = 0; i < listC.Count; i++)
+            {
+                if (selected.Equals(listC[i].NombreCategoria))
+                {
+                    idcategory = listC[i].IdCategoria;
+                }
+
+            }
+
+            //insert tabla intermedia
+            ControllerCategoryProduct objCCP = new ControllerCategoryProduct();
+            bool result2 = objCCP.insertCategoryProducts(idPInsert, idcategory);
+
+            if (result && result2)
             {
                 MessageBox.Show("Product successfully inserted");
             }
             else
             {
                 MessageBox.Show("Product not inserted");
+            }
+
+
+        }
+
+        //Carga de categorias 
+        private void UI_Products_Load(object sender, EventArgs e)
+        {
+           
+            ControllerCategory objCC = new ControllerCategory();
+            listC = objCC.selectCategories();
+
+            for (int i = 0; i < listC.Count; i++)
+            {
+                comboBox1.Items.Add(listC[i].NombreCategoria);
+
             }
         }
     }

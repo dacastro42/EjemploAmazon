@@ -40,6 +40,8 @@ namespace EjemploAmazon.views
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +106,7 @@ namespace EjemploAmazon.views
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(564, 114);
+            this.pictureBox1.Location = new System.Drawing.Point(863, 96);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(178, 204);
             this.pictureBox1.TabIndex = 6;
@@ -113,7 +115,7 @@ namespace EjemploAmazon.views
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(598, 348);
+            this.button1.Location = new System.Drawing.Point(897, 330);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 53);
             this.button1.TabIndex = 7;
@@ -132,11 +134,32 @@ namespace EjemploAmazon.views
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(483, 173);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(348, 34);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(564, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 29);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Category";
+            // 
             // UI_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 502);
+            this.ClientSize = new System.Drawing.Size(1100, 502);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -147,6 +170,7 @@ namespace EjemploAmazon.views
             this.Controls.Add(this.label1);
             this.Name = "UI_Products";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.UI_Products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,5 +189,7 @@ namespace EjemploAmazon.views
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

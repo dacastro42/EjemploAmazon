@@ -32,6 +32,7 @@ namespace EjemploAmazon.models
             connManager.Close();
         }
 
+        //insert
         public bool ExecuteQuery(string sql)
         {
             bool result = false;
