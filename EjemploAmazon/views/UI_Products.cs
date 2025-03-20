@@ -41,6 +41,27 @@ namespace EjemploAmazon.views
 
             bool result = objCP.insertProduct(objp);
 
+
+            //insert tabla intermedia
+
+            bool result2 = insertCategoryProduct();
+
+            if (result && result2)
+            {
+                MessageBox.Show("Product successfully inserted");
+            }
+            else
+            {
+                MessageBox.Show("Product not inserted");
+            }
+
+
+        }
+
+        public bool insertCategoryProduct()
+        {
+            bool result = false;
+            ControllerProduct objCP = new ControllerProduct();
             int idPInsert = objCP.SelectLastProductByID();
 
             string selected = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
@@ -55,20 +76,10 @@ namespace EjemploAmazon.views
 
             }
 
-            //insert tabla intermedia
             ControllerCategoryProduct objCCP = new ControllerCategoryProduct();
-            bool result2 = objCCP.insertCategoryProducts(idPInsert, idcategory);
+            result= objCCP.insertCategoryProducts(idPInsert, idcategory);
 
-            if (result && result2)
-            {
-                MessageBox.Show("Product successfully inserted");
-            }
-            else
-            {
-                MessageBox.Show("Product not inserted");
-            }
-
-
+            return result;
         }
 
         //Carga de categorias 
